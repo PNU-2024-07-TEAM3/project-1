@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Classup List</title>
+</head>
+<body>
+<h1>Classup List</h1>
+<nav th:replace="~{navbar :: navbarFragment}"></nav>
+<ul>
+    <li th:each="classup : ${classups}">
+        <a th:href="@{/classup/{title}(title=${classup.title})}" th:text="${classup.title}"></a>
+        <span th:text="${classup.endDate}"></span>
+        <span th:text="${classup.memberCount}"></span>
+    </li>
+</ul>
+<a th:href="@{/classup/post}">Post New Classup</a>
+</body>
+</html>

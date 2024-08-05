@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${classup.title}"></title>
+</head>
+<body>
+<h1 th:text="${classup.title}"></h1>
+<p>Date: <span th:text="${classup.endDate}"></span></p>
+<p>Members needed: <span th:text="${classup.memberCount}"></span></p>
+<p th:text="${classup.content}"></p>
+<!-- 추가적인 조건부 로직과 버튼 구현 -->
+</body>
+</html>

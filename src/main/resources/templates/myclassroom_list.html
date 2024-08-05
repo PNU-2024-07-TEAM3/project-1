@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My Classrooms</title>
+</head>
+<body>
+<h1>My Classrooms</h1>
+<div th:each="classroom : ${classrooms}">
+    <p th:text="${classroom.name}">Classroom Name</p>
+    <!-- 추가 정보를 표시 -->
+</div>
+</body>
+</html>

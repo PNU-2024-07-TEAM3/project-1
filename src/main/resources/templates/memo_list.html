@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>메모 목록</title>
+</head>
+<body>
+<h1>메모 목록</h1>
+<div th:each="memo : ${memos}">
+    <h2 th:text="${memo.title}"></h2>
+    <p th:text="${memo.content}"></p>
+</div>
+</body>
+</html>
