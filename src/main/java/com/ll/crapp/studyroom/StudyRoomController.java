@@ -21,9 +21,9 @@ public class StudyRoomController {
         return "studyroom_list";
     }
 
-    @GetMapping("/studyroom/{title}/{day}")
-    public String studyRoom(@PathVariable String title, @PathVariable int day, Model model) {
-        List<StudyRoom> studyroom = studyRoomService.findByTitleAndDay(title, day);
+    @GetMapping("/studyroom/{title}/{dayNo}")
+    public String studyRoom(@PathVariable String title, @PathVariable int dayNo, Model model) {
+        List<StudyRoom> studyroom = studyRoomService.findByTitleAndDayNo(title, dayNo);
         model.addAttribute("studyroom", studyroom);
         return "studyroom_day";
     }

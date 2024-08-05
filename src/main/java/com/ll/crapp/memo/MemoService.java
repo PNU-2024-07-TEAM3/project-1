@@ -30,8 +30,8 @@ public class MemoService {
         throw new Exception("User not authenticated.");
     }
 
-    public List<Memo> findByClassroomAndDay(Long classroomId, int day) {
-        return memoRepository.findByClassroomIdAndDay(classroomId, day);
+    public List<Memo> findByClassroomAndDayNo(Long classroomId, int dayNo) {
+        return memoRepository.findByClassroomIdAndDayNo(classroomId, dayNo);
     }
 
     public List<Memo> getMemosByUser(SiteUser siteUser) {
