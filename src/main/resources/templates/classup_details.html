@@ -6,9 +6,8 @@
 </head>
 <body>
 <h1 th:text="${classup.title}"></h1>
-<p>Date: <span th:text="${classup.endDate}"></span></p>
-<p>Members needed: <span th:text="${classup.memberCount}"></span></p>
-<p th:text="${classup.content}"></p>
-<!-- 추가적인 조건부 로직과 버튼 구현 -->
+<p>종료일자: <span th:text="${classup.endDate}"></span> 모집 인원: <span th:text="${classup.memberCount}"></span></p>
+<p><span th:text="${classup.content}"></span></p>
+<!-- TODO 수강신청 버튼 구현 -> 버튼 클릭 시 "수강신청완료" 라는 알림 (중복신청 불가)-->
 </body>
 </html>
