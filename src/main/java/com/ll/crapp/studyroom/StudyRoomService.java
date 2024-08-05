@@ -24,8 +24,8 @@ public class StudyRoomService {
     }
 
 
-    public List<StudyRoom> findByTitleAndDay(String title, int day) {
-        return studyRoomRepository.findByTitleAndDay(title, day);
+    public List<StudyRoom> findByTitleAndDayNo(String title, int dayNo) {
+        return studyRoomRepository.findByTitleAndDayNo(title, dayNo);
     }
 
 }
