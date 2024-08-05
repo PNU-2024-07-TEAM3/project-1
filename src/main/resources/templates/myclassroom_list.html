@@ -6,9 +6,9 @@
 </head>
 <body>
 <h1>My Classrooms</h1>
+<!-- TODO : 자신이 속한 클래스룸만큼 반복 -->
 <div th:each="classroom : ${classrooms}">
     <p th:text="${classroom.name}">Classroom Name</p>
-    <!-- 추가 정보를 표시 -->
 </div>
 </body>
 </html>
