@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>스터디룸 일별 목록</title>
+</head>
+<body>
+<h1>스터디룸 일별 목록</h1>
+<ul>
+    <li th:each="day : ${days}">
+        <a th:href="@{/studyroom/{title}/{day}(title=${title}, day=${day})}"
+           th:text="${day + '일차'}">Day Link</a>
+    </li>
+</ul>
+</body>
+</html>
