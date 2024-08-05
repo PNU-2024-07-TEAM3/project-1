@@ -1,13 +1,13 @@
 package com.ll.crapp.studyroom;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.ll.crapp.user.SiteUser;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -22,5 +22,8 @@ public class StudyRoom {
     private String learningObjective; // 학습 목표
     private LocalDate endDate;  // 종료 일자
     private boolean isOpen;     // 스터디룸 오픈 여부
+
+    @ManyToMany(mappedBy = "studies")
+    private Set<SiteUser> members = new HashSet<>();
 }
   
