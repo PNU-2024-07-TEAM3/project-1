@@ -3,6 +3,7 @@ package com.ll.crapp.user;
 import com.ll.crapp.DataNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -12,12 +13,13 @@ import java.util.Optional;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     public SiteUser create(String nickname, String username, String password) {
         SiteUser siteUser = new SiteUser();
         siteUser.setNickname(nickname);
         siteUser.setUsername(username);
-        siteUser.setPassword(password);
+        siteUser.setPassword(passwordEncoder.encode(password));
         this.userRepository.save(siteUser);
         return siteUser;
     }
