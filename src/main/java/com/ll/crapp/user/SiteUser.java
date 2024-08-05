@@ -1,13 +1,12 @@
 package com.ll.crapp.user;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
+import com.ll.crapp.studyroom.StudyRoom;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -25,4 +24,13 @@ public class SiteUser {
 
     @Column(unique = true)
     private String nickname;
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_study",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "study_id")
+    )
+    private Set<StudyRoom> studies = new HashSet<>();
+
 }
